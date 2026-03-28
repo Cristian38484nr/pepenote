@@ -13,9 +13,8 @@ def pNotes(many, notas):
     listbox = tk.Listbox(pNotes, selectmode=tk.MULTIPLE)  # MULTIPLE o SINGLE
     listbox.pack(pady=10, fill=tk.BOTH, expand=True)
 
-    items = [notas]
-    for item in items:
-        listbox.insert(tk.END, item)
+    for id_nota, contenido in notas.items():
+        listbox.insert(tk.END, f"{id_nota}: {contenido['nota']}")
 
     def delatenotes():
         ide = id.get()
